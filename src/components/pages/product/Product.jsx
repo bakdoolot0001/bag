@@ -1,0 +1,38 @@
+import React, { useEffect } from "react";
+import ProductCard from "../../ui/productCard/ProductCard";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import "./Product.scss";
+
+const Product = () => {
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  async function getProduct() {
+    let res = await axios(
+      `https://api-crud.elcho.dev/api/v1/3dfd0-c7d76-08e1f/bag`
+    );
+    const { data } = res.data;
+    dispatch({
+      type: "GET_PRODUCT",
+      payload: data,
+    });
+  }
+
+  useEffect(() => {
+    getProduct();
+  }, [])
+
+  return (
+    <section id="product">
+      <div className="container">
+          <h1>Product</h1>
+        <div className="product">
+          {products?.map((el) => (
+            <ProductCard key={el.id} el={el} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+export default Product;
