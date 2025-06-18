@@ -12,7 +12,7 @@ const Header = () => {
           <div className="header--nav">
             <NavLink to={"/"}>home</NavLink>
             <NavLink to={"/feature"}>feature</NavLink>
-            <NavLink to={"/about"}>About</NavLink>
+            <NavLink to={"/cart"}>Cart</NavLink>
             <NavLink to={"/product"}>Product</NavLink>
             <button onClick={() => navigate("/admin")}>Admin</button>
           </div>

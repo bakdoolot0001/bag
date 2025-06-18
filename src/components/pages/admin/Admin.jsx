@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./Admin.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Admin = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const { products } = useSelector((state) => state);
   const dispatch = useDispatch();
+  
   const addProduct = () => {
     if (!url.trim() || !name.trim() || !price.trim()) {
-      alert("Please fill in all fields");
+      toast.error("Пожалуйста, заполните все поля", {
+        position: "top-right",
+        theme: "colored",
+        closeOnClick: true,
+      });
     } else {
       const newProduct = {
-        id: Date.now(),
         url: url,
         name: name,
         price: price,
@@ -26,7 +32,11 @@ const Admin = () => {
         `https://api-crud.elcho.dev/api/v1/3dfd0-c7d76-08e1f/bag`,
         newProduct
       );
-      alert("Product added successfully");
+      toast.success("Товар успешно добавлен", {
+        position: "top-right",
+        theme: "colored",
+        closeOnClick: true,
+      });
       setUrl("");
       setName("");
       setPrice("");

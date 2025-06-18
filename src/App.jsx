@@ -4,6 +4,7 @@ import Header from "./components/layout/header/Header";
 import MainPages from "./components/pages/main/mainPages";
 import Admin from "./components/pages/admin/Admin";
 import Product from "./components/pages/product/Product";
+import Cart from "./components/pages/cart/Cart";
 
 function App() {
   const routes = [
@@ -21,6 +22,11 @@ function App() {
       id: 3,
       path: "/product",
       element: <Product />,
+    },
+    {
+      id: 4,
+      path: "/cart",
+      element: <Cart />,
     },
   ];
   return (
