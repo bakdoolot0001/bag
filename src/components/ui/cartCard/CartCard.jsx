@@ -1,35 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CartCard.scss";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
-const CartCard = ({ el, cart }) => {
-  const [count, setCount] = useState(1);
-  const Dispatch = useDispatch();
+const CartCard = ({ el }) => {
+  const dispatch = useDispatch();
+
   const removeFromCart = () => {
-    Dispatch({
+    dispatch({
       type: "REMOVE_FROM_CART",
       payload: el,
     });
-  }
-  console.log(cart);
-  
+  };
+
+  const incrementQuantity = () => {
+    dispatch({
+      type: "INCREMENT_QUANTITY",
+      payload: el,
+    });
+  };
+
+  const decrementQuantity = () => {
+    dispatch({
+      type: "DECREMENT_QUANTITY",
+      payload: el,
+    });
+  };
+
+  const quantity = el.quantity ?? 1;
+  const price = el?.price || 0;
+  const total = price * quantity;
+
+  const [animatedTotal, setAnimatedTotal] = useState(0);
+
+  useEffect(() => {
+    let current = 0;
+
+    const step = () => {
+      current += (total - current) * 0.2;
+      if (Math.abs(total - current) < 1) {
+        setAnimatedTotal(total);
+        return;
+      }
+      setAnimatedTotal(current);
+      requestAnimationFrame(step);
+    };
+
+    step();
+  }, [total]);
+
   return (
     <div className="cartCard">
-      <img src={el?.url} alt="img" />
-      <div className="cartCard--content">
-        <h2>{el?.name.length > 50 ? el.name.slice(0, 54) + "..." : el.name}</h2>
-        <h3>${el?.price}</h3>
-      </div>
+      <img src={el?.url} alt={el?.name || "product image"} />
+      <h2>{el?.name.length > 50 ? el.name.slice(0, 54) + "..." : el.name}</h2>
       <div className="cartCard--quantity">
-        {count > 1 ? (
-          <button onClick={() => setCount(count > 1 ? count - 1 : 1)}>-</button>
+        {quantity > 1 ? (
+          <button onClick={decrementQuantity}>-</button>
         ) : (
-          <button onClick={removeFromCart}><a><FaTrash /></a></button>
+          <button onClick={removeFromCart}>
+            <FaTrash />
+          </button>
         )}
-        <h2>{count}</h2>
-        <button onClick={() => setCount(count + 1)}>+</button>
+        <h2>{quantity}</h2>
+        <button onClick={incrementQuantity}>+</button>
       </div>
+
+      <h3>${animatedTotal.toFixed(0)}</h3>
     </div>
   );
 };

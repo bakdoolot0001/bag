@@ -8,7 +8,6 @@ const Admin = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
-  const { products } = useSelector((state) => state);
   const dispatch = useDispatch();
   
   const addProduct = () => {

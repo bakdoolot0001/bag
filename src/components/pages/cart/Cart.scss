@@ -1,35 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap");
 #cart {
   margin: 30px 0;
-  h1 {
-    font-size: 2.5rem;
-    margin: 20px 0;
-  }
+  font-family: "Roboto", sans-serif;
   .cart {
     display: flex;
     justify-content: space-between;
     align-items: start;
     &--products {
-      width: 70%;
+      font-family: "Roboto", sans-serif;  
+      width: 73%;
       height: 500px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 20px;
+      padding: 10px;
     }
     &--total {
-      width: 25%;
-      height: 200px;
-      border: 1px solid #00000044;
+      width: 22%;
+      height: 160px;
+      margin-top: 10px;
+      -webkit-box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
+      box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
       border-radius: 8px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      gap: 20px;
       h1 {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #9e9999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
       h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      button {
+        height: 40px;
+        background: #f59b01;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
       }
     }
   }

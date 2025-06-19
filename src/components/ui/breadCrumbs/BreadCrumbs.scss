@@ -1,0 +1,41 @@
+.breadcrumb {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
+  margin: 16px 0;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+  color: #1d6fa5;
+}
+
+.breadcrumb .separator {
+  margin: 0 8px;
+  color: #999;
+  user-select: none;
+}
+
+.breadcrumb .current {
+  font-weight: 600;
+  color: #555;
+}

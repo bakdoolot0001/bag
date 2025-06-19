@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../ui/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import axios, { all } from "axios";
 import "./Product.scss";
 import { useLocation } from "react-router-dom";
 
@@ -9,7 +9,6 @@ const Product = () => {
   const products = useSelector((state) => state.products);
   const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
-  const location = useLocation();
 
   async function getProduct() {
     let res = await axios(
@@ -30,7 +29,6 @@ const Product = () => {
   return (
     <section id="product">
       <div className="container">
-        <h1>{location.pathname}</h1>
         <div className="product">
           {products?.map((el, idx) => (
             <ProductCard key={idx} el={el} />

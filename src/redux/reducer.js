@@ -28,7 +28,25 @@ export const Reducer = (state = initialState, action) => {
       );
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       return { ...state, cart: updatedCart };
-    default:
+    case "INCREMENT_QUANTITY":
+      const incrementedCart = state.cart.map((el) => {
+        if (el._id === action.payload._id) {
+          return { ...el, quantity: el.quantity + 1 };
+        }
+        return el;
+      });
+      localStorage.setItem("cart", JSON.stringify(incrementedCart));
+      return { ...state, cart: incrementedCart };
+    case "DECREMENT_QUANTITY":
+      const decrementedCart = state.cart.map((el) => {
+        if (el._id === action.payload._id) {
+          return { ...el, quantity: el.quantity > 1 ? el.quantity - 1 : 1 };
+        }
+        return el;
+      });
+      localStorage.setItem("cart", JSON.stringify(decrementedCart));
+      return { ...state, cart: decrementedCart };
+      default:
       return state;
   }
 };
