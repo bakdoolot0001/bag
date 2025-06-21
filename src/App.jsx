@@ -6,6 +6,7 @@ import Product from "./components/pages/product/Product";
 import Cart from "./components/pages/cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
+import Footer from "./components/layout/footer/Footer";
 
 function App() {
   const routes = [
@@ -43,6 +44,7 @@ function App() {
           <Route path={el.path} element={el.element} key={el.id} />
         ))}
       </Routes>
+      <Footer/>
     </div>
   );
 }
