@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap");
+#footer {
+  background: url(../../../assets/images/Footer.svg) no-repeat center center;
+  font-family: "Roboto", sans-serif;
+  padding: 100px 0;
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      h1 {
+        font-weight: 900;
+        font-size: 35px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        background: #3f5efb;
+        background: radial-gradient(
+          circle,
+          rgba(63, 94, 251, 1) 0%,
+          rgba(252, 70, 107, 1) 100%
+        );
+        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: text;
+        background-clip: text;
+      }
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: #bfbbbb;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 22px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+      a {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 160%;
+        text-transform: capitalize;
+        color: #bfbbbb;
+      }
+    }
+    &--subscribe {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      h2 {
+        font-weight: 700;
+        font-size: 22px;
+        text-transform: capitalize;
+      }
+      input {
+        height: 40px;
+        font-size: 16px;
+        border-radius: 5px;
+        background: none;
+        color: #b0a9a9;
+        text-transform: capitalize;
+        padding-left: 20px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+      button {
+        width: 45%;
+        height: 40px;
+        background: #f59b00;
+        color: white;
+        font-size: 18px;
+        text-transform: capitalize;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
