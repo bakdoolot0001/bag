@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ProductCard from "../../ui/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import axios, { all } from "axios";
+import axios from "axios";
 import "./Product.scss";
-import { useLocation } from "react-router-dom";
 
 const Product = () => {
   const products = useSelector((state) => state.products);
-  const [allProducts, setAllProducts] = useState([]);
   const dispatch = useDispatch();
 
   async function getProduct() {
@@ -15,7 +13,6 @@ const Product = () => {
       `https://api-crud.elcho.dev/api/v1/3dfd0-c7d76-08e1f/bag`
     );
     const { data } = res.data;
-    setAllProducts(data);
     dispatch({
       type: "GET_PRODUCT",
       payload: data,
@@ -24,6 +21,7 @@ const Product = () => {
 
   useEffect(() => {
     getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
