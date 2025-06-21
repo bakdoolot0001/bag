@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios, { all } from "axios";
 import "./Product.scss";
 import { useLocation } from "react-router-dom";
+import Breadcrumbs from "../../ui/breadCrumbs/BreadCrumbs";
 
 const Product = () => {
   const products = useSelector((state) => state.products);
@@ -28,6 +29,7 @@ const Product = () => {
 
   return (
     <section id="product">
+      <Breadcrumbs />
       <div className="container">
         <div className="product">
           {products?.map((el, idx) => (

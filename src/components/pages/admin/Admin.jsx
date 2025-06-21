@@ -3,13 +3,14 @@ import "./Admin.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Breadcrumbs from "../../../components/ui/breadCrumbs/BreadCrumbs";
 
 const Admin = () => {
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const dispatch = useDispatch();
-  
+
   const addProduct = () => {
     if (!url.trim() || !name.trim() || !price.trim()) {
       toast.error("Пожалуйста, заполните все поля", {
@@ -44,6 +45,7 @@ const Admin = () => {
 
   return (
     <section id="admin">
+      <Breadcrumbs />
       <div className="container">
         <div className="admin">
           <h1>Admin</h1>

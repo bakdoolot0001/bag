@@ -4,6 +4,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    img {
+      width: 500px;
+    }
     &--content {
       display: flex;
       flex-direction: column;

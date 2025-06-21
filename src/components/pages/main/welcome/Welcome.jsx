@@ -17,7 +17,7 @@ const Welcome = () => {
               the market and products to Compete with the <br /> Existing
               Businesses.
             </p>
-            <button>join shop</button>
+            <button>Join Shop</button>
           </div>
           <img src={welImg} alt="img" />
         </div>
