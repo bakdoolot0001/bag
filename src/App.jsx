@@ -1,6 +1,4 @@
 import Admin from "./components/pages/admin/Admin";
-import Breadcrumbs from "./components/ui/breadCrumbs/BreadCrumbs";
-import Cart from "./components/pages/cart/Cart";
 import Favorite from "./components/pages/favorite/Favorite";
 import Header from "./components/layout/header/Header";
 import MainPages from "./components/pages/main/mainPages";

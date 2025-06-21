@@ -1,0 +1,115 @@
+#our {
+  padding: 100px 0;
+  .our {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    &--top {
+      display: flex;
+      align-content: center;
+      flex-direction: column;
+      text-align: center;
+      h1 {
+        width: 500px;
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-transform: capitalize;
+        color: #2f2f2f;
+        margin-bottom: 20px;
+      }
+      p {
+        width: 550px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        letter-spacing: 0%;
+        text-align: center;
+        text-transform: capitalize;
+        color: #2f2f2f;
+      }
+    }
+    &--content {
+      width: 1146px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px 30px;
+      &__block1 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #ffe1e8;
+        cursor: pointer;
+      }
+      &__block2 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #ffe1e8;
+        cursor: pointer;
+      }
+      &__block3 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #f9dcff;
+        cursor: pointer;
+      }
+      &__block4 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #ffdee7;
+        cursor: pointer;
+      }
+      &__block5 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #ecf1ff;
+        cursor: pointer;
+      }
+      &__block6 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #fadade;
+        cursor: pointer;
+      }
+      &__block7 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #d9e6fe;
+        cursor: pointer;
+      }
+      &__block8 {
+        width: 264px;
+        height: 273px;
+        border-radius: 10px;
+        background: #ebf4bf;
+        cursor: pointer;
+      }
+    }
+    button {
+      margin-top: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 170px;
+      height: 49px;
+      border-radius: 5px;
+      border: 1px solid #f59b0033;
+      background: transparent;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      text-transform: capitalize;
+      color: #f59b00;
+    }
+  }
+}
