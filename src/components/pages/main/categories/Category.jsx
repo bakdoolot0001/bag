@@ -22,7 +22,6 @@ const Category = () => {
 
   useEffect(() => {
     getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [categories, setCategories] = useState("water resistant");
