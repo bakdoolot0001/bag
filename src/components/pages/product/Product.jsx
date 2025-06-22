@@ -21,11 +21,11 @@ const Product = () => {
 
   useEffect(() => {
     getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <section id="product">
-      <Breadcrumbs />
       <div className="container">
         <div className="product">
           {products?.map((el, idx) => (
