@@ -42,7 +42,7 @@ const Category = () => {
             {category.map((el) => (
               <a
                 onClick={() => setCategories(el)}
-                className={classNames("dsjgkoerhkh", {
+                className={classNames("bag", {
                   "is-active": categories === el,
                 })}
               >

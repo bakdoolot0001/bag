@@ -9,10 +9,8 @@ const MainPages = () => {
     <div>
       <Welcome />
       <Category />
-      <Creative/>
+      <Creative />
       <Our />
     </div>
   );
 };
-
-export default MainPages;

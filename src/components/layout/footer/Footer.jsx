@@ -22,9 +22,11 @@ const Footer = () => {
           </div>
           <div className="footer--content">
             <h2>contact us</h2>
-            <a href="#">(808) 555-0111</a>
-            <a href="#">michelle.rivera@example.com</a>
-            <a href="#">http://www.codehow.com</a>
+            <a href="tel:+996779007909">(808) 555-0111</a>
+            <a href="mailto:michelle.rivera@example.com">
+              michelle.rivera@example.com
+            </a>
+            <a href="http://www.codehow.com">http://www.codehow.com</a>
           </div>
           <div className="footer--subscribe">
             <h2>news latter</h2>

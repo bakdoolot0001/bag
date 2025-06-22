@@ -3,6 +3,7 @@ import ProductCard from "../../ui/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./Product.scss";
+import Breadcrumbs from "../../../components/ui/breadCrumbs/BreadCrumbs";
 
 const Product = () => {
   const products = useSelector((state) => state.products);
