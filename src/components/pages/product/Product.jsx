@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../ui/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -7,6 +7,7 @@ import "./Product.scss";
 const Product = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const [find, setFind] = useState([]);
 
   async function getProduct() {
     let res = await axios(
@@ -17,18 +18,36 @@ const Product = () => {
       type: "GET_PRODUCT",
       payload: data,
     });
+    setFind(data);
+  }
+
+  function getFind(el) {
+    if (el === "expensive") {
+      const sorted = [...products].sort((a, b) => b.price - a.price);
+      setFind(sorted);
+    } else if (el === "cheap") {
+      const sorted = [...products].sort((a, b) => a.price - b.price);
+      setFind(sorted);
+    } else {
+      setFind(products); 
+    }
   }
 
   useEffect(() => {
     getProduct();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <section id="product">
       <div className="container">
+        <select onChange={(e) => getFind(e.target.value)} defaultValue="">
+          <option value="">All</option>
+          <option value="expensive">Expensive</option>
+          <option value="cheap">Cheap</option>
+        </select>
         <div className="product">
-          {products?.map((el, idx) => (
+          {find?.map((el, idx) => (
             <ProductCard key={idx} el={el} />
           ))}
         </div>
@@ -36,4 +55,5 @@ const Product = () => {
     </section>
   );
 };
+
 export default Product;
