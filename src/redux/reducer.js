@@ -3,7 +3,6 @@
 const initialState = {
   products: [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
-  dark: true,
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -50,12 +49,7 @@ export const Reducer = (state = initialState, action) => {
       });
       localStorage.setItem("cart", JSON.stringify(decrementedCart));
       return { ...state, cart: decrementedCart };
-    case "DARK_MODE":
-      return {
-        ...state,
-        dark: !state.dark,
-      };
-    default:
+      default:
       return state;
   }
 };

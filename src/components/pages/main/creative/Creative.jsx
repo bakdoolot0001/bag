@@ -9,7 +9,6 @@ const Creative = () => {
   console.log(products);
   useEffect(() => {
     pop;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
   return (
     <section id="creative">
