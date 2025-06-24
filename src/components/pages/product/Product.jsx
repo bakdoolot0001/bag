@@ -26,7 +26,6 @@ const Product = () => {
 
   return (
     <section id="product">
-      <Breadcrumbs />
       <div className="container">
         <div className="product">
           {products?.map((el, idx) => (
