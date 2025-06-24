@@ -1,6 +1,9 @@
+/* eslint-disable no-fallthrough */
+/* eslint-disable no-case-declarations */
 const initialState = {
   products: [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
+  dark: true,
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -17,6 +20,7 @@ export const Reducer = (state = initialState, action) => {
       };
     case "ADD_TO_CART":
       const res = state.cart.find((item) => item.id === action.payload._id);
+
       if (!res) {
         let result = [...state.cart, action.payload];
         localStorage.setItem("cart", JSON.stringify(result));
@@ -46,7 +50,12 @@ export const Reducer = (state = initialState, action) => {
       });
       localStorage.setItem("cart", JSON.stringify(decrementedCart));
       return { ...state, cart: decrementedCart };
-      default:
+    case "DARK_MODE":
+      return {
+        ...state,
+        dark: !state.dark,
+      };
+    default:
       return state;
   }
 };

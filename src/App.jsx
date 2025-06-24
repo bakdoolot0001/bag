@@ -7,8 +7,11 @@ import Cart from "./components/pages/cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Footer from "./components/layout/footer/Footer";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isDark = useSelector((state) => state.dark);
+
   const routes = [
     {
       id: 1,
@@ -37,7 +40,9 @@ function App() {
     },
   ];
   return (
-    <div className="app">
+    <div style={{ background:isDark ? "white" : "#2f2f2f",
+      color:isDark ? "black" : "white",
+    }}className="app">
       <Header />
       <Routes>
         {routes.map((el) => (
