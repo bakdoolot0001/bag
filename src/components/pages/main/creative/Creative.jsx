@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
 import "./Creative.scss";
 import Bag from "../../../../assets/images/bags.svg";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Creative = () => {
   const { products } = useSelector((s) => s);
@@ -9,7 +9,6 @@ const Creative = () => {
   console.log(products);
   useEffect(() => {
     pop;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
   return (
     <section id="creative">
