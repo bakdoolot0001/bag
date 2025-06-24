@@ -3,6 +3,7 @@ import ProductCard from "../../ui/productCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./Product.scss";
+import Breadcrumbs from "../../ui/breadCrumbs/BreadCrumbs";
 
 const Product = () => {
   const products = useSelector((state) => state.products);
@@ -35,7 +36,7 @@ const Product = () => {
 
   useEffect(() => {
     getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-dep
   }, []);
 
   return (
