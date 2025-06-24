@@ -28,6 +28,7 @@ const Product = () => {
   return (
     <section id="product">
       <div className="container">
+        <Breadcrumbs />
         <div className="product">
           {products?.map((el, idx) => (
             <ProductCard key={idx} el={el} />

@@ -1,44 +1,96 @@
 #welcome {
   background: #2f2f2f;
+
   .welcome {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     img {
       width: 500px;
+      animation: fadeInRight 1.2s ease forwards;
+      opacity: 0;
     }
+
     &--content {
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: flex-start;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+
+      &__desing {
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #f59b00;
+      }
+
       h3 {
         font-weight: 500;
         font-size: 20px;
         text-transform: uppercase;
         color: #f59b00;
       }
+
       h1 {
         font-weight: 700;
         font-size: 61px;
         text-transform: capitalize;
         color: white;
+
         span {
           color: #f59b00;
         }
       }
+
       p {
         font-weight: 400;
         font-size: 18px;
         color: rgba(255, 255, 255, 0.52);
       }
+
       button {
         font-size: 22px;
         color: white;
         background: #f59b00;
         padding: 12px 35px;
         border-radius: 10px;
+        cursor: pointer;
+
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.7s;
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background: #d17e00;
+        }
       }
     }
   }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#welcome .welcome img {
+  opacity: 0;
+  transform: translateX(30px);
 }

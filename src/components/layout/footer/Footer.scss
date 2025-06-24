@@ -1,71 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap");
+
 #footer {
   background: url(../../../assets/images/Footer.svg) no-repeat center center;
+  background-size: cover;
   font-family: "Roboto", sans-serif;
   padding: 100px 0;
+  animation: fadeInUp 1.2s ease forwards;
+
   .footer {
     display: flex;
     justify-content: space-between;
     color: #ffffff;
+
+    &--content,
+    &--subscribe {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
     &--content {
       display: flex;
       flex-direction: column;
       gap: 5px;
+
       h1 {
         font-weight: 900;
         font-size: 35px;
         text-transform: capitalize;
         margin-bottom: 10px;
-        background: #3f5efb;
         background: radial-gradient(
           circle,
           rgba(63, 94, 251, 1) 0%,
           rgba(252, 70, 107, 1) 100%
         );
+        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-text-fill-color: text;
-        background-clip: text;
       }
+
       p {
         font-weight: 400;
         font-size: 18px;
         line-height: 25px;
         color: #bfbbbb;
       }
+
       h2 {
         font-weight: 700;
         font-size: 22px;
         text-transform: capitalize;
         margin-bottom: 20px;
       }
+
       a {
         font-weight: 400;
         font-size: 18px;
         line-height: 160%;
         text-transform: capitalize;
         color: #bfbbbb;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ffffff;
+        }
       }
     }
+
     &--subscribe {
       display: flex;
       flex-direction: column;
       gap: 30px;
+
       h2 {
         font-weight: 700;
         font-size: 22px;
         text-transform: capitalize;
       }
+
       input {
         height: 40px;
         font-size: 16px;
         border-radius: 5px;
         background: none;
         color: #b0a9a9;
-        text-transform: capitalize;
         padding-left: 20px;
         border: 1px solid #ccc;
         outline: none;
+        transition: all 0.3s;
+
+        &:focus {
+          border-color: #f59b00;
+        }
       }
+
       button {
         width: 45%;
         height: 40px;
@@ -76,7 +104,24 @@
         border-radius: 5px;
         border: none;
         cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: linear-gradient(90deg, #f59b00, #fcb900);
+          box-shadow: 0 4px 15px rgba(245, 155, 0, 0.4);
+        }
       }
     }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,0 +1,93 @@
+#contact {
+  padding: 0px 0px 100px 0px;
+  .contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1146px;
+    height: 549px;
+    &--info {
+      display: flex;
+      flex-direction: column;
+      padding-right: 100px;
+      input {
+        margin: 15px 0;
+        padding: 15px 25px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        border: 1px solid #ffffff47;
+        background: transparent;
+        color: #ffffff;
+      }
+      &__confirm {
+        padding: 10px 0px 0px 0px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        &--config {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          input {
+            width: 15px;
+            height: 20px;
+            border: none;
+            outline: none;
+            background: #ffffff;
+          }
+
+          h2 {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 160%;
+            text-transform: capitalize;
+            color: #787878;
+          }
+        }
+        button {
+          width: 133px;
+          height: 49px;
+          background: #f59b00;
+          border-radius: 5px;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 120%;
+          text-transform: capitalize;
+        }
+      }
+      &__inputs {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        input {
+          padding: 15px 25px;
+          border-radius: 10px;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+          border: 1px solid #ffffff47;
+          background: transparent;
+          color: #ffffff;
+        }
+      }
+      h1 {
+        width: 467px;
+        font-weight: 700;
+        font-size: 31px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-transform: capitalize;
+        color: #ffffff;
+      }
+    }
+  }
+}

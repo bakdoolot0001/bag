@@ -1,26 +1,46 @@
 #header {
   background: #2f2f2f;
   padding: 25px 0;
+
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h1 {
       color: #f59b01;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInDown 0.8s ease forwards;
+      animation-delay: 0.2s;
     }
+
     &--nav {
       display: flex;
       align-items: center;
       gap: 40px;
+
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInDown 0.8s ease forwards;
+      animation-delay: 0.4s;
+
       .active {
         color: white;
       }
+
       a {
         font-weight: 400;
         font-size: 22px;
         color: #ffffff96;
         text-transform: capitalize;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #f59b00;
+        }
       }
+
       button {
         font-size: 22px;
         color: white;
@@ -28,7 +48,26 @@
         padding: 12px 35px;
         border-radius: 10px;
         text-transform: capitalize;
+        cursor: pointer;
+
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeInDown 0.8s ease forwards;
+        animation-delay: 0.6s;
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background: #d17e00;
+        }
       }
     }
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
