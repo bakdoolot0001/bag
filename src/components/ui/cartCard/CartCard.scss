@@ -1,8 +1,6 @@
 .cartCard {
   height: 160px;
-  -webkit-box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
-  box-shadow: 0px 0px 13px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 1px 5px 1px rgb(87, 87, 87);
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -16,12 +14,10 @@
   h2 {
     font-size: 18px;
     font-weight: 500;
-    color: #000000d9;
   }
   h3 {
     font-size: 22px;
     font-weight: 600;
-    color: #000000d9;
   }
   &--quantity {
     display: flex;
