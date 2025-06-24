@@ -22,6 +22,7 @@ const Category = () => {
 
   useEffect(() => {
     getProduct();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [categories, setCategories] = useState("water resistant");
@@ -42,7 +43,7 @@ const Category = () => {
             {category.map((el) => (
               <a
                 onClick={() => setCategories(el)}
-                className={classNames("dsjgkoerhkh", {
+                className={classNames("category--block__a", {
                   "is-active": categories === el,
                 })}
               >
@@ -51,9 +52,11 @@ const Category = () => {
             ))}
           </div>
           <div className="category--products">
-            {products.map((el, id) => (
-              <ProductCard el={el} key={id} />
-            ))}
+            {products.map((el, id) => {
+             return categories === el.category ?
+              <ProductCard el={el} key={id} /> :
+              null
+            })}
           </div>
         </div>
       </div>

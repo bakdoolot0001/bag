@@ -1,10 +1,21 @@
 #creative {
+  .title {
+    color: #f59b01;
+    text-align: center;
+    margin: 20px 0;
+  }
   .container {
     max-width: 1150px;
     .creative {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        cursor: pointer;
+      }
       &--content {
         display: flex;
         flex-direction: column;
