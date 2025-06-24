@@ -1,15 +1,15 @@
 import React from "react";
+import Creative from "../main/creative/Creative";
 import Welcome from "./welcome/Welcome";
-import Creative from "../creative/Creative";
-import Our from "../main/our/Our";
 import Category from "./categories/Category";
+import Our from "./our/Our";
 
 const MainPages = () => {
   return (
     <div>
       <Welcome />
-      <Creative />
       <Category />
+      <Creative/>
       <Our />
     </div>
   );

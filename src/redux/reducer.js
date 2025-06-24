@@ -1,6 +1,7 @@
 const initialState = {
   products: [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
+  favorite: JSON.parse(localStorage.getItem("favorite")) || [],
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -46,7 +47,20 @@ export const Reducer = (state = initialState, action) => {
       });
       localStorage.setItem("cart", JSON.stringify(decrementedCart));
       return { ...state, cart: decrementedCart };
-      default:
+    case "ADD_TO_FAVORITE":
+      const result = state.favorite.find((el) => el.id === action.payload._id)
+      if (!result) {
+        let resultFav = [...state.favorite, action.payload];
+        localStorage.setItem("favorite", JSON.stringify(resultFav));
+        return { ...state, favorite: resultFav };
+      }
+    case "REMOVE_FROM_FAVORTIE":
+      const updatedFavorite = state.favorite.filter(
+        (el) => el._id !== action.payload._id
+      );
+      localStorage.setItem("favorite", JSON.stringify(updatedFavorite));
+      return { ...state, favorite: updatedFavorite };
+    default:
       return state;
   }
 };
