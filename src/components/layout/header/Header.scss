@@ -1,5 +1,4 @@
 #header {
-  background: #2f2f2f;
   padding: 25px 0;
 
   .header {
@@ -26,19 +25,13 @@
       animation-delay: 0.4s;
 
       .active {
-        color: white;
+        color: #f59b01;
       }
 
       a {
         font-weight: 400;
         font-size: 22px;
-        color: #ffffff96;
         text-transform: capitalize;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #f59b00;
-        }
       }
 
       button {
@@ -60,6 +53,13 @@
         &:hover {
           background: #d17e00;
         }
+      }
+      .dark{
+        font-size: 22px;
+        background:transparent;
+        padding: 12px 4px;
+        border-radius: 10px;
+        text-transform: capitalize;
       }
     }
   }

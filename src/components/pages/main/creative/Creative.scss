@@ -1,4 +1,9 @@
 #creative {
+  .title {
+    color: #f59b01;
+    text-align: center;
+    margin: 20px 0;
+  }
   .container {
     max-width: 1150px;
 
@@ -6,7 +11,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       &--content {
         display: flex;
         flex-direction: column;
@@ -19,7 +23,7 @@
 
         h2 {
           font-weight: 500;
-          font-size: 20px;
+          font-size: 28px;
           line-height: 150%;
           text-transform: uppercase;
           color: #f59b00;
@@ -32,15 +36,10 @@
 
         h1 {
           font-weight: 700;
-          font-size: 31px;
+          font-size: 34px;
           line-height: 140%;
           text-transform: capitalize;
           color: #2f2f2f;
-
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.7s ease forwards;
-          animation-delay: 0.6s;
         }
 
         p {
@@ -49,11 +48,6 @@
           line-height: 160%;
           text-transform: capitalize;
           color: #2f2f2f;
-
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.7s ease forwards;
-          animation-delay: 0.8s;
         }
 
         button {
